@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #1f2641;
+    --bg-color-1: #2e3267;
+    --bg-color-2: #424890;
+    --primary-color: #6c63ff;
+    --danger-color: #f75841;
+    --success-color: #00bf8e;
+    --warning-color: #f7c94b;
+    --color-white: #fff;
+    --color-black: #000;
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+    --transition: all 400ms ease;
+}
+
+body {
+    min-height: 80vh;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.7;
+    background: #848394;
+}
+
+
+/* >>>>>>>>>> User EXam <<<<<<<<<< */
+
+.exam-container {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 120px;
+}
+
+.user-exam .qa-box {
+    width: 500px;
+    padding: 20px;
+    min-height: 150px;
+    margin: 15px auto;
+    background: var(--color-white);
+    border-radius: 5px;
+    color: var(--color-black);
+    box-shadow: 0 0 5px 3px rgb(0, 0, 0, 0.3);
+}
+
+.user-exam .qa-header {
+    background: var(--bg-color-2);
+    color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    margin: -20px -20px 20px;
+    border-radius: 5px 5px 0 0;
+    font-size: 20px;
+}
+
+.user-exam .qa-set {
+    display: none;
+}
+
+.user-exam .qa-set.active {
+    display: block;
+}
+
+.user-exam .qa-set h4 {
+    margin: 0 0 15px;
+    font-size: 20px;
+}
+
+.user-exam .qa-ans-row {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.user-exam .qa-ans-row input {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.user-exam .qa-ans-row span {
+    display: block;
+    padding: 8px 15px;
+    background: var(--primary-color);
+    border-radius: 12px;
+    transition: all 0.3s ease-out;
+}
+
+.user-exam .qa-ans-row:hover span {
+    opacity: 0.9;
+}
+
+.user-exam .qa-ans-row input:checked+span {
+    background: var(--danger-color);
+}
+
+.user-exam .qa-ans-row input[valid]:checked+span {
+    background: var(--success-color);
+    color: var(--color-white);
+}
+
+.user-exam .qa-footer {
+    padding: 10px 0 0;
+    text-align: right;
+}
+
+.user-exam .qa-footer .btn1 {
+    display: inline-block;
+    padding: 8px 20px;
+    background: var(--bg-color-2);
+    color: var(--color-white);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.user-exam .qa-footer .btn1:hover {
+    opacity: 0.9;
+}
+
+@media(max-width: 570px) {
+    .user-exam .qa-box {
+        width: 325px;
+        padding: 10px;
+        min-height: 100px;
+        margin: 20px auto;
+    }
+    .user-exam .qa-header {
+        padding: 10px;
+        margin: -10px -10px 10px;
+        font-size: 17px;
+    }
+    .user-exam .qa-set h4 {
+        margin: 0 0 15px;
+        font-size: 18px;
+    }
+}
+
+
+/* End User Exam */
